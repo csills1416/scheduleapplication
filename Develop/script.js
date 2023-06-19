@@ -26,3 +26,5 @@ $(".time-block").each(function()) {
     $(this).find(".description").val(description);
 }
 });
+
+$("#currentDay").text(dayjs().format("dddd, MMMM D, YYYY"));
