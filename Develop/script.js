@@ -18,3 +18,11 @@ function updateTimeBlocks() {
   }
 }
 
+$(".time-block").each(function()) {
+  var timeBlockId = $(this).attr("id");
+  var description = localStorage.getItem(timeBlockId);
+
+  if (description) {
+    $(this).find(".description").val(description);
+}
+});
