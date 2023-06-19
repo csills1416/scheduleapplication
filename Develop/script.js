@@ -5,30 +5,33 @@ $(function () {
     localStorage.setItem(timeBlockId, description);
   });
 
-function updateTimeBlocks() {
-  var currentTime = parseInt($(this).attr("id".split("-")[1]), 10);
+  function updateTimeBlocks() {
+    var currentHour = dayjs().hour();
 
-  $(this).removeClass("past present future");
-  if (hour< currentTime) {
-    $(this).addClass("past");
-  } else if (hour === currentTime) {
-    $(this).addClass("present");
-  } else {
-    $(this).addClass("future");
+    $(".time-block").each(function () {
+      var timeBlockHour = parseInt($(this).attr("id").split("-")[1], 10);
+
+      $(this).removeClass("past present future");
+      if (timeBlockHour < currentHour) {
+        $(this).addClass("past");
+      } else if (timeBlockHour === currentHour) {
+        $(this).addClass("present");
+      } else {
+        $(this).addClass("future");
+      }
+    });
   }
-});
-}
 
-updateTimeBlocks();
+  updateTimeBlocks();
 
-$(".time-block").each(function()) {
-  var timeBlockId = $(this).attr("id");
-  var description = localStorage.getItem(timeBlockId);
+  $(".time-block").each(function () {
+    var timeBlockId = $(this).attr("id");
+    var description = localStorage.getItem(timeBlockId);
 
-  if (description) {
-    $(this).find(".description").val(description);
-}
-});
+    if (description) {
+      $(this).find(".description").val(description);
+    }
+  });
 
-$("#currentDay").text(dayjs().format("dddd, MMMM D, YYYY"));
+  $("#currentDay").text(dayjs().format("dddd, MMMM D, YYYY"));
 });
