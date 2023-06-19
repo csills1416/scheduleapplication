@@ -16,7 +16,10 @@ function updateTimeBlocks() {
   } else {
     $(this).addClass("future");
   }
+});
 }
+
+updateTimeBlocks();
 
 $(".time-block").each(function()) {
   var timeBlockId = $(this).attr("id");
@@ -28,3 +31,4 @@ $(".time-block").each(function()) {
 });
 
 $("#currentDay").text(dayjs().format("dddd, MMMM D, YYYY"));
+});
