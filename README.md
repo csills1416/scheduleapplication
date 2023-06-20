@@ -39,8 +39,8 @@ The Work Day Scheduler is a web application that allows users to create and mana
 
 ## Credits
 
-- jQuery: [Link to jQuery]([https://jquery.com/](https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js))
-- Day.js: [Link to Day.js]([https://day.js.org/](https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"))
+- jQuery: [Link to jQuery] https://jquery.com/](https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js
+- Day.js: [Link to Day.js] https://day.js.org/](https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
 
 ## License
 
