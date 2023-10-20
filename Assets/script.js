@@ -1,4 +1,6 @@
 $(function () {
+
+  // Save button event
   $(".saveBtn").on("click", function () {
     var timeBlockId = $(this).parent().attr("id");
     var description = $(this).siblings(".description").val();
@@ -22,8 +24,7 @@ $(function () {
     });
   }
 
-  updateTimeBlocks();
-
+  // Load saved data from localStorage
   $(".time-block").each(function () {
     var timeBlockId = $(this).attr("id");
     var description = localStorage.getItem(timeBlockId);
@@ -33,5 +34,12 @@ $(function () {
     }
   });
 
+  // Display current day
   $("#currentDay").text(dayjs().format("dddd, MMMM D, YYYY"));
+
+  // Initial time block update
+  updateTimeBlocks();
+  
+  // Update the time blocks every minute
+  setInterval(updateTimeBlocks, 60000);
 });
